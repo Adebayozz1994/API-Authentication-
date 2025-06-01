@@ -4,14 +4,14 @@ A simple Node.js REST API for user authentication and book management, featuring
 
 ---
 
-## 🚀 Features
+##  Features
 
-- ✅ User registration and login with hashed passwords (`bcryptjs`)
-- ✅ JWT authentication using `jsonwebtoken`
-- ✅ Role-based authorization (e.g., admin-only routes)
-- ✅ Protected book CRUD operations
-- ✅ Basic input validation
-- ✅ `.env` file for storing secrets
+-  User registration and login with hashed passwords (`bcryptjs`)
+-  JWT authentication using `jsonwebtoken`
+-  Role-based authorization (e.g., admin-only routes)
+-  Protected book CRUD operations
+-  Basic input validation
+-  `.env` file for storing secrets
 
 ---
 
@@ -48,7 +48,7 @@ Clone the repository
 bash
 Copy
 Edit
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/Adebayozz1994/API-Authentication-.git
 cd your-repo-name
 Install dependencies
 
