@@ -25,7 +25,7 @@ A simple Node.js REST API for user authentication and book management, featuring
 │ ├── auth.js # User registration and login
 │ └── books.js # Book management (CRUD)
 ├── utils/
-│ └── validate.js # Book input validation
+│ └── validate.ts # Book input validation
 ├── .env # Environment variables (JWT secret, port)
 ├── .gitignore # Ignore node_modules, .env, etc.
 ├── index.js # Entry point
