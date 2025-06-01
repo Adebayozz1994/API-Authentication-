@@ -5,11 +5,11 @@ const { users } = require('../data/store');
 
 const router = express.Router();
 
-// Register
+// Register user logic
 router.post('/register', async (req, res) => {
   const { username, password, role = 'user' } = req.body;
 
-  const exists = users.find((u) => u.username === username);
+  const exists = users.find((a) => a.username === username);
   if (exists) return res.status(400).json({ message: 'User already exists' });
 
   const hashed = await bcrypt.hash(password, 10);
@@ -17,10 +17,10 @@ router.post('/register', async (req, res) => {
   res.status(201).json({ message: 'User registered successfully' });
 });
 
-// Login
+// Login user logic
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
-  const user = users.find((u) => u.username === username);
+  const user = users.find((a) => a.username === username);
   if (!user) return res.status(400).json({ message: 'Invalid credentials' });
 
   const isMatch = await bcrypt.compare(password, user.password);

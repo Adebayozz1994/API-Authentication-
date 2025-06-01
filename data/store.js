@@ -1,4 +1,4 @@
-const users = []; // { username, password (hashed), role }
-const books = []; // { id, title, author, year }
+const users = []; 
+const books = []; 
 
 module.exports = { users, books };

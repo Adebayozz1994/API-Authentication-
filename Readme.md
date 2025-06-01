@@ -48,7 +48,7 @@ Clone the repository
 bash
 Copy
 Edit
-git clone https://github.com/Adebayozz1994/API-Authentication-.git
+git clone https://github.com/Adebayozz1994/API-Authentication-
 cd your-repo-name
 Install dependencies
 

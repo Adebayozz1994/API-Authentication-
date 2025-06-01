@@ -8,7 +8,7 @@ function authenticate(req, res, next) {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // { username, role }
+    req.user = decoded; 
     next();
   } catch {
     res.status(403).json({ message: 'Invalid token' });
@@ -18,7 +18,7 @@ function authenticate(req, res, next) {
 function authorizeRole(role) {
   return (req, res, next) => {
     if (req.user.role !== role) {
-      return res.status(403).json({ message: 'Insufficient privileges' });
+      return res.status(403).json({ message: 'You need authorization' });
     }
     next();
   };

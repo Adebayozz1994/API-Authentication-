@@ -5,22 +5,22 @@ const { validateBook } = require('../utils/validate');
 
 const router = express.Router();
 
-// All routes below require authentication
+// All routes below require authentication, yessss
 router.use(authenticate);
 
-// GET all books
+// Get the books
 router.get('/', (req, res) => {
   res.json(books);
 });
 
-// GET book by ID
+// Get the book by ID
 router.get('/:id', (req, res) => {
   const book = books.find((b) => b.id === parseInt(req.params.id));
   if (!book) return res.status(404).json({ message: 'Book not found' });
   res.json(book);
 });
 
-// ADD new book
+// Add new book
 router.post('/', (req, res) => {
   const error = validateBook(req.body);
   if (error) return res.status(400).json({ message: error });
@@ -30,7 +30,7 @@ router.post('/', (req, res) => {
   res.status(201).json(newBook);
 });
 
-// UPDATE book
+// Update book
 router.put('/:id', (req, res) => {
   const book = books.find((b) => b.id === parseInt(req.params.id));
   if (!book) return res.status(404).json({ message: 'Book not found' });
@@ -42,7 +42,7 @@ router.put('/:id', (req, res) => {
   res.json(book);
 });
 
-// DELETE book (admin only)
+// Delete book (admin only)
 router.delete('/:id', authorizeRole('admin'), (req, res) => {
   const index = books.findIndex((b) => b.id === parseInt(req.params.id));
   if (index === -1) return res.status(404).json({ message: 'Book not found' });
